@@ -13,8 +13,12 @@ import { AdminComponent } from './admin/admin.component';
 		BrowserModule,
 		RouterModule.forRoot([
 			{
-				path: 'Sign-in',
+				path: 'sign-in',
 				component: SignInComponent
+			},
+			{
+				path: 'admin',
+				component: AdminComponent
 			},
 			{
 				path: '',

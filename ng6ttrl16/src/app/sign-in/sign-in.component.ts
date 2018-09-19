@@ -12,4 +12,10 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
   }
 
+  signinUser(event){
+    event.preventDefault()
+    const target = event.target
+    const username = 
+    console.log(event)
+  }
 }
