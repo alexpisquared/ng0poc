@@ -24,9 +24,9 @@ export class SignInComponent implements OnInit {
       //   //redirect hte person to /admin
       // }else{
       //   window.alert(data.message)
-      window.alert("data.message")
-      }
-    })
+      window.alert("data.message");
+      })
+    
     console.log(username, password)
   }
 }
