@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { SignInService } from './sign-in.service';
 import { AuthService } from '../auth.service';
 import { User } from './user';
-import { LoginState } from './login-state';
+import { SignInState } from './signIn-state';
 
 @Component({
 	selector: 'app-sign-in',
@@ -14,27 +14,31 @@ import { LoginState } from './login-state';
 })
 export class SignInComponent implements OnInit, OnDestroy {
 	user: User;
-	loginResult: string;
+	signInResult: string;
 	isSigned: boolean;
 	private subscription: Subscription;
 
 	constructor(private auth: AuthService, private signInService: SignInService, private router: Router) {}
 
 	ngOnInit() {
-		this.subscription = this.signInService.loggedIn$.subscribe((x) => this.onLoginChanged(x));
+		this.subscription = this.signInService.signedIn$.subscribe((x) => this.onSignInChanged(x));
 		this.reset();
 	}
 	reset() {
 		this.user = { username: '', password: '' };
-		this.loginResult = '';
-  }
-  onSubmit() { // signinUser(event) {
+		this.signInResult = '';
+	}
+	onSubmit() {
+		// signinUser(event)
 		let isSuccess: boolean;
-		isSuccess = this.signInService.loginUser(this.user);
+		isSuccess = this.signInService.signInUser(this.user);
 		if (isSuccess) {
-			this.loginResult = 'Logged IN !!!';
+			this.signInResult = 'Signed IN !!!';
+			this.router.navigate([ 'admin' ]);
+			this.auth.setSignedIn(true);
 		} else {
-			this.loginResult = 'Login FAILED !!!';
+			this.signInResult = 'SignIn FAILED !!!';
+			//window.alert(data.message);
 		}
 		// event.preventDefault();
 		// const target = event.target;
@@ -42,9 +46,9 @@ export class SignInComponent implements OnInit, OnDestroy {
 		// const password = target.querySelector('#password');
 		// this.auth.getUserDetails(username, password).subscribe((data) => {
 		// 	// if(data.success){
-		// 	//   //redirect hte person to /admin
+		// 	//   //redirect thr person to /admin
 		// 	this.router.navigate([ 'admin' ]);
-		// 	this.auth.setLoggedIn(true);
+		// 	this.auth.setSignedIn(true);
 		// 	// }else{
 		// 	//   window.alert(data.message)
 		// 	window.alert('data.message');
@@ -53,13 +57,13 @@ export class SignInComponent implements OnInit, OnDestroy {
 		console.log(username, password);
 	}
 
-	onLoginChanged(data: LoginState) {
-		if (data.isLoggedIn === true) {
+	onSignInChanged(data: SignInState) {
+		if (data.isSignedIn === true) {
 			this.isSigned = true;
 			this.user = { username: '', password: '' };
 		} else {
 			this.isSigned = false;
-			this.loginResult = '';
+			this.signInResult = '';
 		}
 	}
 
@@ -68,6 +72,6 @@ export class SignInComponent implements OnInit, OnDestroy {
 	}
 
 	onFormChanged() {
-		this.loginResult = '';
+		this.signInResult = '';
 	}
 }

@@ -9,15 +9,15 @@ interface myData {
 	providedIn: 'root'
 })
 export class AuthService {
-	private loggedInStatus = false;
+	private signedInStatus = false;
 
 	constructor(private http: HttpClient) {}
 
-	setLoggedIn(value: boolean) {
-		this.loggedInStatus = value;
+	setSignedIn(value: boolean) {
+		this.signedInStatus = value;
 	}
-	get isLoggedIn() {
-		return this.loggedInStatus;
+	get isSignedIn() {
+		return this.signedInStatus;
 	}
 
 	getUserDetails(username, password) {

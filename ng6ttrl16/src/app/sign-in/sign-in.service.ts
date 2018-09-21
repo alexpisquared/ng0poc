@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { LoginState } from './loginState';
+import { SignInState } from './signInState';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignInService {
-  private defaultData: LoginState = { isLoggedIn: false, isNesAdmin: false, userName: 'none' };
+  private defaultData: SignInState = { isSignedIn: false, isNesAdmin: false, userName: 'none' };
 
   // Observable sources
-  private loggedInSource: BehaviorSubject<LoginState> = new BehaviorSubject<LoginState>(this.defaultData);
-  loggedIn$: Observable<LoginState> = this.loggedInSource.asObservable();
+  private signedInSource: BehaviorSubject<SignInState> = new BehaviorSubject<SignInState>(this.defaultData);
+  signedIn$: Observable<SignInState> = this.signedInSource.asObservable();
 
   constructor() {
   }
 
-  loginUser(user: User): boolean {
+  signInUser(user: User): boolean {
     if (user !== null) {
       if (user.username === user.password) {
-        this.loggedInSource.next({ isLoggedIn: true, isNesAdmin: false, userName: user.username });
+        this.signedInSource.next({ isSignedIn: true, isNesAdmin: false, userName: user.username });
         return true;
       }
     }
@@ -28,6 +28,6 @@ export class SignInService {
   }
 
   logoutUser() {
-    this.loggedInSource.next(this.defaultData);
+    this.signedInSource.next(this.defaultData);
   }
 }
