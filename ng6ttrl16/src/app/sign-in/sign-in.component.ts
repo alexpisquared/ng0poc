@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { SignInService } from './sign-in.service';
 import { AuthService } from '../auth.service';
 import { User } from './user';
-import { SignInState } from './signIn-state';
+import { SignInState } from './sign-in-state';
 
 @Component({
 	selector: 'app-sign-in',
@@ -18,7 +18,12 @@ export class SignInComponent implements OnInit, OnDestroy {
 	isSigned: boolean;
 	private subscription: Subscription;
 
-	constructor(private auth: AuthService, private signInService: SignInService, private router: Router) {}
+	constructor(
+		private auth: AuthService,
+		private signInService: SignInService,
+		private router: Router,
+		private sis: SignInState
+	) {}
 
 	ngOnInit() {
 		this.subscription = this.signInService.signedIn$.subscribe((x) => this.onSignInChanged(x));
@@ -29,7 +34,6 @@ export class SignInComponent implements OnInit, OnDestroy {
 		this.signInResult = '';
 	}
 	onSubmit() {
-		// signinUser(event)
 		let isSuccess: boolean;
 		isSuccess = this.signInService.signInUser(this.user);
 		if (isSuccess) {
@@ -40,20 +44,21 @@ export class SignInComponent implements OnInit, OnDestroy {
 			this.signInResult = 'SignIn FAILED !!!';
 			//window.alert(data.message);
 		}
-		// event.preventDefault();
-		// const target = event.target;
-		// const username = target.querySelector('#username');
-		// const password = target.querySelector('#password');
-		// this.auth.getUserDetails(username, password).subscribe((data) => {
-		// 	// if(data.success){
-		// 	//   //redirect thr person to /admin
-		// 	this.router.navigate([ 'admin' ]);
-		// 	this.auth.setSignedIn(true);
-		// 	// }else{
-		// 	//   window.alert(data.message)
-		// 	window.alert('data.message');
-		// });
-
+	}
+	signinUser(event) {
+		event.preventDefault();
+		const target = event.target;
+		const username = target.querySelector('#username');
+		const password = target.querySelector('#password');
+		this.auth.getUserDetails(username, password).subscribe((data) => {
+			// if(data.success){
+			//   //redirect thr person to /admin
+			this.router.navigate([ 'admin' ]);
+			this.auth.setSignedIn(true);
+			// }else{
+			//   window.alert(data.message)
+			window.alert('data.message');
+		});
 		console.log(username, password);
 	}
 

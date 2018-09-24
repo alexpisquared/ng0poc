@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { SignInState } from './signInState';
+import { SignInState } from './sign-in-state';
 
 @Injectable({
   providedIn: 'root'

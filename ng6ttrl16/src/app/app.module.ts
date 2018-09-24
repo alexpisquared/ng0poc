@@ -22,7 +22,7 @@ import { SignInModule } from './sign-in/sign-in.module';
 		RouterModule.forRoot([
 			{ path: 'sign-in', component: SignInComponent },
 			{ path: 'admin', component: AdminComponent, canActivate: [ AuthGuard ] },
-			{ path: '', component: HomeComponent }
+			{ path: '', component: HomeComponent },
 			{ path: '**', component: HomeComponent }
 		])
 	],
