@@ -10,6 +10,7 @@ import { DetailsComponent } from './details/details.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
+import { ApPocComponent } from './ap-poc/ap-poc.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DataService } from './data.service';
     SidebarComponent,
     PostsComponent,
     UsersComponent,
-    DetailsComponent
+    DetailsComponent,
+    ApPocComponent
   ],
   imports: [
     BrowserModule,
