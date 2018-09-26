@@ -18,7 +18,7 @@ if(isset($_POST) && ! empty($_POST)){
         ?>
         {
             "success":false,
-            message": "Invalid redentials"
+            message": "Invalid credentials"
         }
         <?php
     }
@@ -27,7 +27,7 @@ if(isset($_POST) && ! empty($_POST)){
         ?>
         {
             "success":false,
-            message": "Invalid redentials"
+            message": "Invalid credentials"
         }
         <?php
     }

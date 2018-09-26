@@ -9,15 +9,17 @@ interface myData {
 	providedIn: 'root'
 })
 export class AuthService {
-	private signedInStatus = false;
+	
+	private signedInStatus  = JSON.parse(localStorage.getItem('loggedIn')||'false') 
 
 	constructor(private http: HttpClient) {}
 
 	setSignedIn(value: boolean) {
 		this.signedInStatus = value;
+		localStorage.setItem('loggedIn', 'true') 
 	}
 	get isSignedIn() {
-		return this.signedInStatus;
+		return JSON.parse(localStorage.getItem('loggedIn')||this.signedInStatus.toString());
 	}
 
 	getUserDetails(username, password) {

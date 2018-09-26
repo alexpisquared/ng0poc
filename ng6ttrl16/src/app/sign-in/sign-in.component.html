@@ -14,12 +14,12 @@
       #userSigninForm="ngForm" (ngSubmit)="onSubmit()" autocomplete="off" (appFormChanged)="onFormChanged($event)"
       (submit)="signinUser($event)"      >
           <div class="input-field col s12">
-            <input type="text" class="validate" name="username" id="username" #username="ngModel" [(ngModel)]="user.username" required minlength="4" >
-            <label for="username" [attr.data-error]="username.errors != null ? (!!username.errors?.required ? 'Required Field' : 'Minimum 4 chars') : ''">User Name</label>
+            <input type="text" class="validate" name="username" id="username" #username="ngModel" [(ngModel)]="user.username" required minlength="2" >
+            <label for="username" [attr.data-error]="username.errors != null ? (!!username.errors?.required ? 'Required Field' : 'Minimum 2 chars') : ''">User Name</label>
           </div>
           <div class="input-field col s12">
-            <input type="password" class="validate" name="password" id="password" #password="ngModel" [(ngModel)]="user.password" required minlength="4">
-            <label for="password" [attr.data-error]="password.errors != null ? (!!password.errors?.required ? 'Required Field' : 'Minimum 4 chars') : ''">Password</label>
+            <input type="password" class="validate" name="password" id="password" #password="ngModel" [(ngModel)]="user.password" required minlength="2">
+            <label for="password" [attr.data-error]="password.errors != null ? (!!password.errors?.required ? 'Required Field' : 'Minimum 2 chars') : ''">Password</label>
           </div>
           <div class="row">
             <div class="input-field col s12">

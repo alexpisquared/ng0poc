@@ -11,6 +11,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { SignInModule } from './sign-in/sign-in.module';
+import { SignInState } from './sign-in/sign-in-state';
+// import { SignInState } from './sign-in/sign-in-state';
 
 @NgModule({
 	declarations: [ AppComponent, HomeComponent, SignInComponent, AdminComponent ],
@@ -26,7 +28,7 @@ import { SignInModule } from './sign-in/sign-in.module';
 			{ path: '**', component: HomeComponent }
 		])
 	],
-	providers: [ AuthService, AuthGuard ],
+	providers: [ AuthService, AuthGuard, SignInState ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}
