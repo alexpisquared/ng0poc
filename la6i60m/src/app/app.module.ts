@@ -11,6 +11,7 @@ import { DetailsComponent } from './details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 import { ApPocComponent } from './ap-poc/ap-poc.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ApPocComponent } from './ap-poc/ap-poc.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [], // DataService], // ??
   bootstrap: [AppComponent]
