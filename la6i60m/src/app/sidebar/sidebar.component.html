@@ -1,6 +1,6 @@
 <nav><ul>
-    <li><a routerLink=""><i class="material-icons">supervised_user_circle</i></a></li>
-    <li><a routerLink="users"><i class="material-icons">save</i></a></li>
-    <li><a routerLink="posts"><i class="material-icons">message</i></a></li>
-    <li><a routerLink="ap-poc"><i class="material-icons">pause</i></a></li>
+    <li><a routerLink=""       [class.activated]="currentUrl =='/'"><i class="material-icons">supervised_user_circle</i></a></li>
+    <li><a routerLink="users"  [class.activated]="currentUrl == '/users'"><i class="material-icons">save</i></a></li>
+    <li><a routerLink="posts"  [class.activated]="currentUrl == '/posts'"><i class="material-icons">message</i></a></li>
+    <li><a routerLink="ap-poc" [class.activated]="currentUrl =='/ap-poc'"><i class="material-icons">pause</i></a></li>
 </ul></nav>

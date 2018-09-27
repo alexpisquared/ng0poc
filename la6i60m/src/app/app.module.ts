@@ -26,7 +26,7 @@ import { ApPocComponent } from './ap-poc/ap-poc.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [DataService], // ??
+  providers: [], // DataService], // ??
   bootstrap: [AppComponent]
 })
 export class AppModule { }
