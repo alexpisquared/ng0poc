@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 import { ApPocComponent } from './ap-poc/ap-poc.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserCoresComponent } from './user-cores/user-cores.component';
+import { NymiBandsComponent } from './nymi-bands/nymi-bands.component';
+import { UserCoreDetailsComponent } from './user-core-details/user-core-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PostsComponent,
     UsersComponent,
     DetailsComponent,
-    ApPocComponent
+    ApPocComponent,
+    UserCoresComponent,
+    NymiBandsComponent,
+    UserCoreDetailsComponent
   ],
   imports: [
     BrowserModule,
