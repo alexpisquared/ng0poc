@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataNesService } from '../data-nes.service';
 import { ActivatedRoute } from '@angular/router';
+
+import { DataNesService } from '../data-nes.service';
 
 @Component({
 	selector: 'app-user-core-details',
@@ -11,7 +12,7 @@ export class UserCoreDetailsComponent implements OnInit {
 	user$: Object;
 
 	constructor(private data: DataNesService, private route: ActivatedRoute) {
-		this.route.params.subscribe((params) => (this.user$ = params.ID));
+		this.route.params.subscribe((params) => (this.user$ = params.id));
 	}
 
 	ngOnInit() {
