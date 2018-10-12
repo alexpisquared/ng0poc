@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
 	declarations: [ AppComponent, SidebarComponent ],
 	imports: [ BrowserModule, AppRoutingModule ],
-	// exports: [ SidebarComponent ],
+	exports: [ SidebarComponent ],
 	providers: [],
 	bootstrap: [ AppComponent ]
 })
