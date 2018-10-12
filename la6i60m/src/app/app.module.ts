@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserCoresComponent } from './user-cores/user-cores.component';
 import { NymiBandsComponent } from './nymi-bands/nymi-bands.component';
 import { UserCoreDetailsComponent } from './user-core-details/user-core-details.component';
+import { NymiBandDetailsComponent } from './nymi-band-details/nymi-band-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserCoreDetailsComponent } from './user-core-details/user-core-details.
     ApPocComponent,
     UserCoresComponent,
     NymiBandsComponent,
-    UserCoreDetailsComponent
+    UserCoreDetailsComponent,
+    NymiBandDetailsComponent
   ],
   imports: [
     BrowserModule,

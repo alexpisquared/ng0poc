@@ -16,7 +16,11 @@ export class DataNesService {
 	getUserByID(id) {
 		return this.http.get('https://localhost:44303/api/users/' + id);
 	}
+
 	getBands() {
 		return this.http.get('https://localhost:44303/api/nymibands');
+	}
+	getBandByID(id) {
+		return this.http.get('https://localhost:44303/api/nymibands/' + id);
 	}
 }

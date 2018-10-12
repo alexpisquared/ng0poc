@@ -8,6 +8,7 @@ import { DetailsComponent } from './details/details.component';
 import { UserCoresComponent } from './user-cores/user-cores.component';
 import { NymiBandsComponent } from './nymi-bands/nymi-bands.component';
 import { UserCoreDetailsComponent } from './user-core-details/user-core-details.component';
+import { NymiBandDetailsComponent } from './nymi-band-details/nymi-band-details.component';
 
 const routes: Routes = [
 	{ path: '', component: UsersComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
 	{ path: 'user-cores', component: UserCoresComponent },
 	{ path: 'user-core-details/:domain/:username', component: UserCoreDetailsComponent },
 	{ path: 'user-core-details/:id', component: UserCoreDetailsComponent },
-	{ path: 'nymi-bands', component: NymiBandsComponent }
+	{ path: 'nymi-bands', component: NymiBandsComponent },
+	{ path: 'nymi-band-details/:id', component: NymiBandDetailsComponent }
 ];
 
 @NgModule({
