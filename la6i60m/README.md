@@ -1,4 +1,12 @@
 # La6i60m
+ap: From:
+    https://coursetro.com/posts/code/154/Angular-6-Tutorial---Learn-Angular-6-in-this-Crash-Course
+    https:://cli.angular.io/
+    https://github.com/angular/angular-cli
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
