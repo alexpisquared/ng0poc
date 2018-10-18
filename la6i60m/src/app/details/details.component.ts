@@ -9,13 +9,13 @@ import { DataService } from '../data.service';
 	styleUrls: [ './details.component.scss' ]
 })
 export class DetailsComponent implements OnInit {
-	user$: Object;
+	band$: Object;
 
-	constructor(private data: DataService, private route: ActivatedRoute) {
-		this.route.params.subscribe((params) => (this.user$ = params.id));
+	constructor(private bandService: DataService, private route: ActivatedRoute) {
+		this.route.params.subscribe((params) => (this.band$ = params.id));
 	}
 
 	ngOnInit() {
-		this.data.getUser(this.user$).subscribe((data) => (this.user$ = data));
+		this.bandService.getUser(this.band$).subscribe((bandService) => (this.band$ = bandService));
 	}
 }
