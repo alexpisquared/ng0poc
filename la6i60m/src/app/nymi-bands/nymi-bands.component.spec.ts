@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NymiBandsComponent } from './nymi-bands.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('NymiBandsComponent', () => {
   let component: NymiBandsComponent;
@@ -8,6 +9,7 @@ describe('NymiBandsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule], //tu:     NullInjectorError: No provider for HttpClient!
       declarations: [ NymiBandsComponent ]
     })
     .compileComponents();

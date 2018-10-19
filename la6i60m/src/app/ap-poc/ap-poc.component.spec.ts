@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ApPocComponent } from './ap-poc.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ApPocComponent', () => {
   let component: ApPocComponent;
@@ -8,6 +9,7 @@ describe('ApPocComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule], //tu:     NullInjectorError: No provider for HttpClient!
       declarations: [ ApPocComponent ]
     })
     .compileComponents();

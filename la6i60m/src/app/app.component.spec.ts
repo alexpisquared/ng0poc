@@ -4,13 +4,14 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { Component } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 @Component({ selector: 'app-sidebar', template: '' })
 class SidebarStubComponent {} //tu: ap:
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, HttpClientModule], //tu:     NullInjectorError: No provider for HttpClient!
       declarations: [AppComponent, SidebarStubComponent]
     }).compileComponents();
   }));

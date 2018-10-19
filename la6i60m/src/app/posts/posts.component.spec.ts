@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostsComponent } from './posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PostsComponent', () => {
   let component: PostsComponent;
@@ -8,6 +9,7 @@ describe('PostsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule], //tu:     NullInjectorError: No provider for HttpClient!
       declarations: [ PostsComponent ]
     })
     .compileComponents();
