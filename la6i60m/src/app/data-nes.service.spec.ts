@@ -1,12 +1,25 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { DataNesService } from './data-nes.service';
 
 describe('DataNesService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
-
-  it('should be created', () => {
-    const service: DataNesService = TestBed.get(DataNesService);
-    expect(service).toBeTruthy();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+      providers: [DataNesService]
+    });
   });
+
+  // it('should be created ORG', () => {
+  //   const service: DataNesService = TestBed.get(DataNesService);
+  //   expect(service).toBeTruthy();
+  // });
+
+  it('should be created', inject(
+    [DataNesService],
+    (service: DataNesService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });
