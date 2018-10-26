@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB3A9C96-E283-46D6-B91B-749A4700EBA2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>MonitorReaderEvents</RootNamespace>
-    <AssemblyName>MonitorReaderEvents</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <ProjectGuid>{DE2A9463-7DC5-498B-8C05-5E497E4D7598}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MonitorReaderEvents.Lib</RootNamespace>
+    <AssemblyName>MonitorReaderEvents.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PCSC, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PCSC.4.0.1\lib\net40\PCSC.dll</HintPath>
+      <HintPath>..\SmartCard\packages\PCSC.4.0.1\lib\net40\PCSC.dll</HintPath>
     </Reference>
     <Reference Include="PCSC.Iso7816, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PCSC.Iso7816.4.0.1\lib\net40\PCSC.Iso7816.dll</HintPath>
+      <HintPath>..\SmartCard\packages\PCSC.Iso7816.4.0.1\lib\net40\PCSC.Iso7816.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,11 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="PSCS.Helpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
