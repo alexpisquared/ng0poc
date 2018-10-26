@@ -1,0 +1,17 @@
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\AUTHORS
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\COPYING
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\pcsc-sharp.dll.config
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\ReaderTester.exe.config
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\ReaderTester.exe
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\ReaderTester.pdb
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\pcsc-sharp.dll
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\pcsc-sharp.pdb
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\pcsc-sharp.xml
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\obj\Release\MonitorReaderEvents.csprojResolveAssemblyReference.cache
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\obj\Release\MonitorReaderEvents.csproj.CoreCompileInputs.cache
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\obj\Release\ReaderTester.exe
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\obj\Release\ReaderTester.pdb
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\ReaderTester.exe.manifest
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\bin\Release\ReaderTester.application
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\obj\Release\ReaderTester.exe.manifest
+C:\Users\apigida\OneDrive\c\gh\SC\Examples\MonitorReaderEvents\obj\Release\ReaderTester.application
