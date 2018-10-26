@@ -1,5 +1,5 @@
 import { Component, Injector } from '@angular/core';
-import { createCustomELement } from '@angular/elements';
+import { createCustomElement } from '@angular/elements';
 import { MyElementComponent } from './my-element/my-element.component';
 
 @Component({
@@ -11,7 +11,7 @@ export class AppComponent {
 	title = 'v6-welcom2';
 	constructor(private injector: Injector) {}
 	ngOnInit() {
-		let myElement = createCustomELement(MyElementComponent, { injector: this.injector });
+		let myElement = createCustomElement(MyElementComponent, { injector: this.injector });
 		customElements.define('my-element', myElement);
 	}
 }
