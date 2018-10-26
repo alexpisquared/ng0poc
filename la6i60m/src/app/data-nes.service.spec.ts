@@ -1,12 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DataNesService } from './data-nes.service';
 
 describe('DataNesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule], //tu:     NullInjectorError: No provider for HttpClient!
       providers: [DataNesService]
     });
   });
