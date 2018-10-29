@@ -17,7 +17,7 @@ describe('NymiBandDetailsComponent', () => {
         {
           provide: ActivatedRoute,
           usevalue: route
-        }
+        }]
     })
     .compileComponents();
   }));

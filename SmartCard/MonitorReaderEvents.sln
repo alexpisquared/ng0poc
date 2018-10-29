@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorReaderEvents.Con", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorReaderEvents.Wpf", "MonitorReaderEvents.Wpf\MonitorReaderEvents.Wpf.csproj", "{0F210AC5-AB6F-421A-9E2C-80BD22D6FE53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorReaderEvents.Lib", "..\MonitorReaderEvents.Lib\MonitorReaderEvents.Lib.csproj", "{DE2A9463-7DC5-498B-8C05-5E497E4D7598}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorReaderEvents.Lib", "MonitorReaderEvents.Lib\MonitorReaderEvents.Lib.csproj", "{DE2A9463-7DC5-498B-8C05-5E497E4D7598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
