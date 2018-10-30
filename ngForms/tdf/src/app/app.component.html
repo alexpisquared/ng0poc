@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <h1>Enrollment Form</h1>
+  <form #userForm='ngForm' action="">
+
+    {{userForm.value | json}}
+    <hr>
+    {{userModel | json}}
+
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class='form-control' name='name' [(ngModel)]='userModel.name'>
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="email" class='form-control' name='email' [(ngModel)]='userModel.email'>
+    </div>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input type="tel" class='form-control' name='phone' [(ngModel)]='userModel.phone'>
+    </div>
+
+    <div class="form-group">
+      <select name="topic" id="" class="custom-select" [(ngModel)]='userModel.topic'>
+        <option value="">I am interested in</option>
+        <option value="" *ngFor="let topic of topics">{{topic}}</option>
+      </select>
+    </div>
+
+    <div class="class mb-3">
+      <label for="">Time pref</label>
+      <div class="form-check">
+        <input type="radio" class="fomr-check-input" name='timePref' value="morning" [(ngModel)]='userModel.timePref'>
+        <label for="" class="form-check-label">Morning</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="fomr-check-input" name='timePref' value="evening" [(ngModel)]='userModel.timePref'>
+        <label for="" class="form-check-label">Evening</label>
+      </div>
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="fomr-check-input" name='subscribe' name='' [(ngModel)]='userModel.subscribe'>
+      <label for="" class="form-check-label">Send promo offers</label>
+    </div>
+
+    <div ngModelGroup='address'>
+      <div class="form-group"><label>Street </label><input type="text" class='form-control' name='street'  [(ngModel)]='userModel.street'  ></div>
+      <div class="form-group"><label>City   </label><input type="text" class='form-control' name='city'    [(ngModel)]='userModel.city'    ></div>
+      <div class="form-group"><label>Zipcode</label><input type="text" class='form-control' name='zipcode' [(ngModel)]='userModel.zipcode' ></div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit form</button>
+
+  </form>
+</div>
