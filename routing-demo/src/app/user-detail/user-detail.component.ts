@@ -19,31 +19,30 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
   styles: []
 })
 export class UserDetailComponent implements OnInit {
-  public userId;
+  goBackUserId: number;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    // let id = parseInt(this.route.snapshot.paramMap.get('id'));
+    // this.userId = parseInt(this.route.snapshot.paramMap.get('id'));
     this.route.paramMap.subscribe((params: ParamMap) => {
-      let id = parseInt(params.get('id'));
-      this.userId = id;
+      this.goBackUserId = parseInt(params.get('id'));
     });
   }
 
   goPrev() {
-    let newId = this.userId - 1;
+    let newId = this.goBackUserId - 1;
     this.router.navigate(['/users', newId], { relativeTo: this.route }); // this.router.navigate(['/users', newId]);
   }
   goNext() {
-    let newId = this.userId + 1;
+    let newId = this.goBackUserId + 1;
     this.router.navigate(['/users', newId], { relativeTo: this.route }); // this.router.navigate(['/users', newId]);
   }
   gotoUsers() {
-    let selectedId = this.userId ? this.userId : null;
+    let selectedId = this.goBackUserId ? this.goBackUserId : null;
     this.router.navigate(['../', { id: selectedId }], {
       relativeTo: this.route
-    }); // this.router.navigate(['/users', { id: selectedId }]);
+    });
   }
 
   showOverview() {
