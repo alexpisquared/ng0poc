@@ -31,10 +31,10 @@ export class UserListComponent implements OnInit {
   }
 
   onSelect(user) {
-    this.router.navigate(['/users', user.id]);
+    this.router.navigate([user.id], { relativeTo: this.route }); // this.router.navigate(['/users', user.id]); <= absolute vs relative navigation =>
   }
 
-  isSelected(user){
+  isSelected(user) {
     return user.id === this.selectedId;
   }
 }
