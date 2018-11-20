@@ -1,16 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
-
-
-
-
-
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+// @import '~@angular/material/prebuilt-themes/purple-green.css';
 
 @import '~@angular/material/theming';
 
 @include mat-core();
 
-$default-theme: mat-light-theme(mat-palette($mat-grey), mat-palette($mat-amber), mat-palette($mat-red));
+@mixin global-theme($theme) {
+  $primary: map-get(
+    $map: $theme,
+    $key: primary
+  );
+  $accent: map-get(
+    $map: $theme,
+    $key: accent
+  );
+  $warn: map-get(
+    $map: $theme,
+    $key: warn
+  );
+  $background: map-get(
+    $map: $theme,
+    $key: background
+  );
+  $foreground: map-get(
+    $map: $theme,
+    $key: foreground
+  );
 
-.default-theme { // put to index.html
-  @include angular-material-theme($default-theme);
+  .content {
+    background-color: mat-color($background, background);
+    color: mat-color($foreground, text);
+  }
+  .a {
+    color: mat-color($primary);
+  }
+}
+
+$light-theme: mat-light-theme(mat-palette($mat-teal), mat-palette($mat-amber), mat-palette($mat-red));
+$dark-theme: mat-dark-theme(mat-palette($mat-purple), mat-palette($mat-blue), mat-palette($mat-red));
+
+.light-theme {
+  @include angular-material-theme($light-theme);
+}
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+  @include global-theme($dark-theme);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
 }
