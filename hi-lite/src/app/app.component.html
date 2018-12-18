@@ -1,26 +1,25 @@
-<!-- The content below is only a placeholder and can be replaced. -->
-<div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
-</div>
-<h2>Here are some links to help you start:</h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- <div style="text-align:center">  <h1>Welcome to {{ title }}!</h1></div><button (click)="goAdmin()">Admin</button>
+  <router-outlet></router-outlet> -->
+<mat-toolbar color="primary">
+  <button mat-button><span style="font-size:.5cm;">&nbsp; Enterprise Management &nbsp; &nbsp; &nbsp; &nbsp; </span></button>
 
-<div style="background-color:#fed; margin: 20px; padding: 20px;">
-  <p>app.component works!</p>
-  .321: <input type="text" placeholder="Text" [formControl]="text" /> <br />
-  Find: <input type="text" placeholder="Searched words" [formControl]="searchedWordsControl" />
-  <p appHighlight [searchedWords]="searchedWords$ | async" [text]="text.value" classToApply="selected4"></p>
-</div>
+  <span class="horizontalSpacer" style="margin: 20px; color: #aaa;"></span>
 
-<button (click)="goAdmin()">Admin</button>
+  <button mat-button routerLink="/contact">Contact</button> <button mat-button>Hello, {{ userName }}!</button>
+  <button mat-button (click)="signOut()" *ngIf="isSignedIn">Sign out</button>
+
+  <button mat-button (click)="toggleTheme()">Theme</button>
+</mat-toolbar>
+
+<mat-nav-list style="margin: 10px; color: #aaa;">
+  <button mat-mini-fab  routerLink="/nymi-bands" matTooltip="Nymi Bands" color="warn"><mat-icon mat-list-icon>thumb_up</mat-icon></button>
+  <div style="margin: 10px; color: #aaa;">
+    <mat-icon mat-list-icon>fingerprint</mat-icon><br /><br />
+    <mat-icon mat-list-icon>nfc</mat-icon><br /><br />
+    <mat-icon mat-list-icon>bluetooth_audio</mat-icon><br /><br />
+  </div>
+</mat-nav-list>
+
 <router-outlet></router-outlet>
+
+<mat-toolbar class="sidenav0-footer"> &nbsp; &nbsp; &nbsp; © Copyright 2018 Nymi Inc. </mat-toolbar>
