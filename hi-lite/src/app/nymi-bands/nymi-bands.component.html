@@ -1,3 +1,6 @@
-<p>
-  nymi-bands works!
-</p>
+<div style="background-color:#dfe; margin: 20px; padding: 20px;">
+  <p>nymi-bands works!</p>
+  .321: <input type="text" placeholder="Text" [formControl]="text" /> <br />
+  Find: <input type="text" placeholder="Searched words" [formControl]="searchedWordsControl" />
+  <p appHighlight [searchedWords]="searchedWords$ | async" [text]="text.value" classToApply="selected4"></p>
+</div>

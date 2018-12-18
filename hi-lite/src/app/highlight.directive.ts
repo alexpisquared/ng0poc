@@ -8,7 +8,7 @@ export class HighlightDirective {
   @Input() text: string;
   @Input() classToApply: string;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (!this.searchedWords || !this.searchedWords.length || !this.classToApply) {
@@ -16,15 +16,11 @@ export class HighlightDirective {
       return;
     }
 
-    this.renderer.setProperty(
-      this.el.nativeElement,
-      'innerHTML',
-      this.getFormattedText()
-    );
+    this.renderer.setProperty(this.el.nativeElement, 'innerHTML', this.getFormattedText());
   }
 
   getFormattedText() {
-    const re = new RegExp(`(${ this.searchedWords.join('|') })`, 'g');
+    const re = new RegExp(`(${this.searchedWords.join('|')})`, 'g');
 
     return this.text.replace(re, `<span class="${this.classToApply}">$1</span>`);
   }

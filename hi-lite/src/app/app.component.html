@@ -1,10 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced. -->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <h1>Welcome to {{ title }}!</h1>
 </div>
-<h2>Here are some links to help you start: </h2>
+<h2>Here are some links to help you start:</h2>
 <ul>
   <li>
     <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
@@ -17,29 +15,12 @@
   </li>
 </ul>
 
+<div style="background-color:#fed; margin: 20px; padding: 20px;">
+  <p>app.component works!</p>
+  .321: <input type="text" placeholder="Text" [formControl]="text" /> <br />
+  Find: <input type="text" placeholder="Searched words" [formControl]="searchedWordsControl" />
+  <p appHighlight [searchedWords]="searchedWords$ | async" [text]="text.value" classToApply="selected4"></p>
+</div>
+
+<button (click)="goAdmin()">Admin</button>
 <router-outlet></router-outlet>
-
-<button (click)='goAdmin()'>Admin</button>
-
-<hr>
-
-Dynamic example:
-
-<br>
-<br>
-
-Text: <br>
-<input type="text" placeholder="Text" [formControl]="text">
-
-<br>
-<br>
-
-Searched words: <br>
-<input type="text" placeholder="Searched words" [formControl]="searchedWordsControl">
-
-<p
-  appHighlight
-  [searchedWords]="searchedWords$ | async"
-  [text]="text.value"
-  classToApply="selected"
-></p>
