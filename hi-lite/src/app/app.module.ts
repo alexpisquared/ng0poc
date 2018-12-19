@@ -11,7 +11,15 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { NymiBandsComponent } from './nymi-bands/nymi-bands.component';
 
 import { RouterModule, Routes } from '@angular/router'; // ??     NullInjectorError: No provider for Router!
-import { MatToolbarModule, MatIconModule, MatListModule, MatSidenavModule, MatButtonModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -25,7 +33,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatListModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   declarations: [AppComponent, HighlightDirective, HomeAdminComponent, NymiBandsComponent],
   providers: [],
