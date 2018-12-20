@@ -2,8 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeAdminComponent } from './home-admin.component';
 import { RouterTestingModule } from '@angular/router/testing';
-// import { ReactiveFormsModule } from '@angular/forms';
-// import { HighlightDirective } from '../highlight.directive';
 
 describe('HomeAdminComponent', () => {
   let component: HomeAdminComponent;
@@ -11,11 +9,8 @@ describe('HomeAdminComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        // ReactiveFormsModule // Can't bind to 'formControl' since it isn't a known property of 'input'.
-        RouterTestingModule //  Error StaticInjectorError DynamicTestModule Router karma
-      ],
-      declarations: [HomeAdminComponent] // , HighlightDirective] // Can't bind to 'searchedWords' since it isn't a known property of 'p'.
+      imports: [RouterTestingModule], // Error StaticInjectorError DynamicTestModule Router karma
+      declarations: [HomeAdminComponent]
     }).compileComponents();
   }));
 

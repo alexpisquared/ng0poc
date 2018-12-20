@@ -1,9 +1,9 @@
-import { Directive, Input, SimpleChanges, Renderer2, ElementRef } from '@angular/core';
+import { Directive, Input, SimpleChanges, Renderer2, ElementRef, OnChanges } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
 })
-export class HighlightDirective {
+export class HighlightDirective implements OnChanges {
   @Input() searchedWords: string[];
   @Input() text: string;
   @Input() classToApply: string;

@@ -22,11 +22,11 @@ export class NymiBandsComponent implements OnInit {
   searchedWordsControl = new FormControl('');
   searchedWords$: Observable<string[]> = this.searchedWordsControl.valueChanges.pipe(map((search: string) => search.trim().split(' ')));
 
-  @ViewChild('name0') nameField: ElementRef;
+  @ViewChild('focus0') nameField: ElementRef;
 
   constructor() {}
 
   ngOnInit() {
-    this.nameField.nativeElement.focus();
+    setTimeout(() => {      this.nameField.nativeElement.focus();    }, 1000);
   }
 }
