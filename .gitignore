@@ -265,3 +265,11 @@ __pycache__/
 package/
 build/
 Src/NEM.DataSvc5/
+SmartCard/MonitorReaderEvents/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+SmartCard/MonitorReaderEvents/obj/Debug/MonitorReaderEvents.exe
+SmartCard/MonitorReaderEvents/obj/Debug/MonitorReaderEvents.pdb
+*.pdb
+*.exe
+SmartCard/MonitorReaderEvents/obj/
+SmartCard/MonitorReaderEvents/obj/Debug/MonitorReaderEvents.exe
+*.exe

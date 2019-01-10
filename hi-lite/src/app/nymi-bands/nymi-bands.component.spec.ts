@@ -11,7 +11,8 @@ describe('NymiBandsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule], //  1/2  Can't bind to 'formControl' since it isn't a known property of 'input'.
+      //  1/2  Can't bind to 'formControl' since it isn't a known property of 'input'.
+      imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule],
       declarations: [NymiBandsComponent, HighlightDirective] // Can't bind to 'searchedWords' since it isn't a known property of 'p'.
     }).compileComponents();
   }));

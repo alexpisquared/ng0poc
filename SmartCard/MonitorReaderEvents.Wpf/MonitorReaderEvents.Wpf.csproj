@@ -102,7 +102,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MonitorReaderEvents.Lib\MonitorReaderEvents.Lib.csproj">
+    <ProjectReference Include="..\MonitorReaderEvents.Lib\MonitorReaderEvents.Lib.csproj">
       <Project>{de2a9463-7dc5-498b-8c05-5e497e4d7598}</Project>
       <Name>MonitorReaderEvents.Lib</Name>
     </ProjectReference>

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using PCSC;
+﻿using PCSC;
 using PCSC.Exceptions;
 using PCSC.Iso7816;
 using PCSC.Monitoring;
 using PCSC.Utils;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 
 namespace MonitorReaderEvents
 {
@@ -18,7 +18,7 @@ namespace MonitorReaderEvents
     {
       try
       {
-        Console.WriteLine("  This program will monitor all SmartCard readers and display all status changes.\n");
+        Console.WriteLine("\n***  This program will monitor all SmartCard readers and display all status changes.\n");
 
         if (!Debugger.IsAttached)
           setupTracingOptions("ReaderTester");
@@ -176,7 +176,7 @@ namespace MonitorReaderEvents
         Console.ForegroundColor = ConsoleColor.DarkYellow;
         Console.Write($" {args.ReaderName,-42} ");
         Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Console.Write($" {("StatusChanged"),-15} ");
+        Console.Write($" {"StatusChanged",-15} ");
 
         Console.ForegroundColor = (args.NewState & SCRState.InUse) == 0 && (args.NewState & SCRState.Mute) == 0 ? ConsoleColor.Cyan : ConsoleColor.Magenta;
         Console.Write($"{args.LastState,15} -> {args.NewState,-15} ");
@@ -199,7 +199,7 @@ namespace MonitorReaderEvents
     static void ex(object sender, PCSCException ex) { Console.Write("Monitor exited due an error:"); Console.WriteLine(SCardHelper.StringifyError(ex.SCardError)); }
 
     static string[] GetReaderNames() { using (var context = _contextFactory.Establish(SCardScope.System)) { return context.GetReaders(); } }
-    static bool NoReaderFound(ICollection<string> readerNames) { return readerNames == null || readerNames.Count < 1; }
+    static bool NoReaderFound(ICollection<string> readerNames) => readerNames == null || readerNames.Count < 1;
 
     static void setupTracingOptions(string appName)
     {
