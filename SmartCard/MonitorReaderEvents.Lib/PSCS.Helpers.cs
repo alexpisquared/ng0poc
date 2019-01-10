@@ -1,13 +1,7 @@
 ﻿using PCSC;
-using PCSC.Exceptions;
 using PCSC.Iso7816;
-using PCSC.Monitoring;
 using PCSC.Utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonitorReaderEvents.Lib
 {

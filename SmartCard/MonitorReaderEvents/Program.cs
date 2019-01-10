@@ -147,7 +147,7 @@ namespace MonitorReaderEvents
       Console.ForegroundColor = ConsoleColor.Yellow;
       Console.WriteLine("\n  Press Esc to exit or any key to toggle monitor.\n");
       Console.ForegroundColor = c;
-      Console.WriteLine($" {("ReaderName"),-42}  Event Type           Last State -> New State       UID Scan Reasult        SW1   SW2   ATR");
+      Console.WriteLine($" {"ReaderName",-42}  Event Type           Last State -> New State       UID Scan Reasult        SW1   SW2   ATR");
     }
 
     static void AttachToAllEvents(ISCardMonitor monitor)
@@ -163,7 +163,7 @@ namespace MonitorReaderEvents
       Console.ForegroundColor = ConsoleColor.DarkYellow;
       Console.Write($" {args.ReaderName,-42} ");
       Console.ForegroundColor = ConsoleColor.DarkCyan;
-      Console.Write($" {eventName,-15} {(""),19}{args.State,-18}");
+      Console.Write($" {eventName,-15} {"",19}{args.State,-18}");
       /*if ((args.State & SCRState.Present) != 0) GetUID(args.ReaderName);*/
       Console.WriteLine($"{(eventName.Equals("Card Removed") ? "\r\n\n" : "")}");
       Console.ResetColor();

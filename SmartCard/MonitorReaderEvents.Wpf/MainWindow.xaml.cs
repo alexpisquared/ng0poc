@@ -1,19 +1,17 @@
-﻿using System;
+﻿using MonitorReaderEvents.Lib;
+using PCSC;
+using PCSC.Exceptions;
+using PCSC.Monitoring;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using MonitorReaderEvents.Lib;
-using PCSC;
-using PCSC.Exceptions;
-using PCSC.Iso7816;
-using PCSC.Monitoring;
-using PCSC.Utils;
 
 namespace WpfApp2
 {
   public partial class MainWindow : Window, IDisposable
   {
-    public MainWindow() { InitializeComponent(); }
+    public MainWindow() => InitializeComponent();
     void onEx(object sender, RoutedEventArgs e) => Close();
     void onGo(object sender, RoutedEventArgs e)
     {
@@ -49,7 +47,7 @@ namespace WpfApp2
 
         if (readerNames?.Length < 1) tk1.Text = "No Readers connected";
 
-        tk1.Text = ($"Connected reader(s): \r\n\t{string.Join("\r\n\t", readerNames)}\r\n");
+        tk1.Text = $"Connected reader(s): \r\n\t{string.Join("\r\n\t", readerNames)}\r\n";
 
         _monitor = new SCardMonitor(_contextFactory, SCardScope.System);
 
@@ -84,7 +82,7 @@ namespace WpfApp2
           tk1.Text += "!UI Thread??";
           Application.Current.Dispatcher.BeginInvoke(new Action(() =>
           {
-            tk1.Text += (Success ? $"{Report}\r\n" : $"{args.LastState,-18} ► {args.NewState,-18} + {BitConverter.ToString(args.Atr)} => {Report}\r\n");
+            tk1.Text += Success ? $"{Report}\r\n" : $"{args.LastState,-18} ► {args.NewState,-18} + {BitConverter.ToString(args.Atr)} => {Report}\r\n";
             if (Success)
               GetUID_finis();
           }));
@@ -100,5 +98,4 @@ namespace WpfApp2
         GetUID_finis();
     }
   }
-
 }
