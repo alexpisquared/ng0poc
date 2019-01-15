@@ -15,4 +15,7 @@ export class HomeAdminComponent implements OnInit {
   goBands() {
     this.router.navigate(['nymi-bands']);
   }
+  goForms() {
+    this.router.navigate(['hero-form-reactive']);
+  }
 }

@@ -21,6 +21,10 @@ import {
   MatInputModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeroFormReactiveComponent } from './hero-form-reactive/hero-form-reactive.component';
+// import { AlterEgoDirective } from './shared/alter-ego.directive';
+// import { ForbiddenNameDirective } from './shared/forbidden-name.directive';
+// import { IdentityRevealedDirective } from './shared/identity-revealed.directive';
 
 @NgModule({
   imports: [
@@ -37,7 +41,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule
   ],
-  declarations: [AppComponent, HighlightDirective, HomeAdminComponent, NymiBandsComponent],
+  declarations: [
+    AppComponent,
+    HighlightDirective,
+    HomeAdminComponent,
+    NymiBandsComponent,
+    HeroFormReactiveComponent,
+    // AlterEgoDirective,
+    // ForbiddenNameDirective,
+    // IdentityRevealedDirective
+  ],
   providers: [],
   bootstrap: [AppComponent],
   exports: []
