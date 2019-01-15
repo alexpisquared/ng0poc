@@ -15,10 +15,10 @@ export class HeroFormReactiveComponent implements OnInit {
 
   hero = { name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0] };
 
-  heroForm: FormGroup;
+  signInFormGroup: FormGroup;
 
   ngOnInit(): void {
-    this.heroForm = new FormGroup(
+    this.signInFormGroup = new FormGroup(
       {
         name: new FormControl(this.hero.name, [Validators.required, Validators.minLength(4), forbiddenNameValidator(/bob/i)]),
         alterEgo: new FormControl(this.hero.alterEgo, {
@@ -32,15 +32,15 @@ export class HeroFormReactiveComponent implements OnInit {
   }
 
   get name() {
-    return this.heroForm.get('name');
+    return this.signInFormGroup.get('name');
   }
 
   get power() {
-    return this.heroForm.get('power');
+    return this.signInFormGroup.get('power');
   }
 
   get alterEgo() {
-    return this.heroForm.get('alterEgo');
+    return this.signInFormGroup.get('alterEgo');
   }
 
   constructor(private alterEgoValidator: UniqueAlterEgoValidator) {}

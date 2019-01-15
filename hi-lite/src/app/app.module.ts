@@ -22,6 +22,7 @@ import {
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroFormReactiveComponent } from './hero-form-reactive/hero-form-reactive.component';
+import { MateriaFormValidationComponent } from './materia-form-validation/materia-form-validation.component';
 // import { AlterEgoDirective } from './shared/alter-ego.directive';
 // import { ForbiddenNameDirective } from './shared/forbidden-name.directive';
 // import { IdentityRevealedDirective } from './shared/identity-revealed.directive';
@@ -47,6 +48,7 @@ import { HeroFormReactiveComponent } from './hero-form-reactive/hero-form-reacti
     HomeAdminComponent,
     NymiBandsComponent,
     HeroFormReactiveComponent,
+    MateriaFormValidationComponent,
     // AlterEgoDirective,
     // ForbiddenNameDirective,
     // IdentityRevealedDirective
