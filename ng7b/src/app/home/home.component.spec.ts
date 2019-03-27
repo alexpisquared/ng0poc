@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,9 +9,9 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule], // Error: StaticInjectorError(DynamicTestModule)[HttpClient]:       StaticInjectorError(Platform: core)[HttpClient]:        NullInjectorError: No provider for HttpClient!
+      declarations: [HomeComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

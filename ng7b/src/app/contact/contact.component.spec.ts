@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -8,9 +9,9 @@ describe('ContactComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactComponent ]
-    })
-    .compileComponents();
+      imports: [ReactiveFormsModule], // tu: <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+      declarations: [ContactComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
