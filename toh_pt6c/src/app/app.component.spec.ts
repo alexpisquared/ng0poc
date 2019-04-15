@@ -5,12 +5,11 @@ import { MessagesComponent } from './messages/messages.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+      imports: [RouterTestingModule],
       declarations: [
-        AppComponent, MessagesComponent //tu: Failed: Template parse errors: 'app-messages' is not a known element:
-      ],
+        AppComponent,
+        MessagesComponent //tu: Failed: Template parse errors: 'app-messages' is not a known element:
+      ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
