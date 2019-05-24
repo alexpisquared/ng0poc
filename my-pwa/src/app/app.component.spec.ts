@@ -1,16 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MatToolbarModule, MatIconModule } from '@angular/material';
+import { AppTableComponent } from './app-table/app-table.component';
+import { AppNavComponent } from './app-nav/app-nav.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule, MatIconModule, MatToolbarModule, AppTableComponent, AppNavComponent],
+      declarations: [AppComponent]
     }).compileComponents();
   }));
 
