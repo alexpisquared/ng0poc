@@ -1,6 +1,10 @@
 README:
 =======      
+
+Creating PWA with Angular 6 using Angular Material
+May-2018
 www.youtube.com/watch?v=0UKJbtdPx4I
+
 
 cd .\ng0poc\
 npm install -g @angular/cli
@@ -15,6 +19,7 @@ ng generate @angular/material:material-table  --name="app-table"
 ng add      @angular/pwa
 
 npm install lite-server --save-dev
+add to package.json: "start:prod": "ng build --prod && lite-server --baseDir dist/pwa-on20190904",
 npm run start:prod
 
 ng build --base-href "/xApi/" --prod
